@@ -10,7 +10,7 @@ services:
     environment:
       - GIN_MODE=release
       # - DB_CONNECTION="host=150.95.82.125 user=postgres password=P@ssword dbname=tododb sslmode=disable"
-      - DB_CONNECTION="postgres://postgres:P%40ssword@aa:5432/tododb?sslmode=disable"
+      - DB_CONNECTION=postgres://postgres:P%40ssword@150.95.82.125:5432/tododb?sslmode=disable
       - PORT=8080
       - JWT_SECRET=e54cfd9e8452f8393d6a0b15ef60f7e4a803ec6f49d5511d5c5749012f9f7da6
 
