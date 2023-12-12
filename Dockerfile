@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -o todo ./cmd/todo
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o todo ./cmd/todo
 
 # Start a new stage for the final image
 FROM alpine:latest  
