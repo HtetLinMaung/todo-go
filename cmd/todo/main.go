@@ -50,5 +50,5 @@ func main() {
 	router := api.NewRouter(messageRoute, authRoute, todoRoute, imageRoute)
 	gin.SetMode(gin.ReleaseMode)
 	r := router.SetupRouter()
-	r.Run(fmt.Sprintf(":%s", port))
+	r.Run(fmt.Sprintf("0.0.0.0:%s", port))
 }
