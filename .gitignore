@@ -1,0 +1,26 @@
+# Compiled binary executables
+/bin/
+*.exe
+*.exe~
+
+# Output of the go coverage tool
+*.out
+
+# Project-specific environment variables
+.env
+
+# Dependency directories (remove the "/" at the end to ignore the version control directories)
+/vendor/
+/Godeps/
+
+# IDE and editor files
+*.swp
+*.swo
+*.idea/
+*.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Operating System files
+.DS_Store
+Thumbs.db
