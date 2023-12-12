@@ -29,6 +29,7 @@ func main() {
 	connString := setting.GetConnectionString()
 	port := setting.GetPort()
 
+	fmt.Println("Connection string: ", connString)
 	database, err := db.NewConnection(connString)
 	if err != nil {
 		log.Fatal("Could not connect to database:", err)
