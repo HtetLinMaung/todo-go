@@ -10,13 +10,14 @@ import (
 	"github.com/HtetLinMaung/todo/internal/service"
 	"github.com/HtetLinMaung/todo/internal/setting"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	// err := godotenv.Load()
-	// if err != nil {
-	// 	log.Fatal("Error loading .env file")
-	// }
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 
 	imageDir := "./images"
 	if _, err := os.Stat(imageDir); os.IsNotExist(err) {
