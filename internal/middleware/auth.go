@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/HtetLinMaung/todo/internal/setting"
 	"github.com/HtetLinMaung/todo/internal/utils"
 	"github.com/gin-gonic/gin"
 )
@@ -30,7 +31,7 @@ func AuthMiddleware() gin.HandlerFunc {
 		}
 
 		tokenString := bearerToken[1]
-		token, err := utils.VerifyToken(tokenString)
+		token, err := utils.VerifyToken(tokenString, setting.GetJwtSecret())
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
 				"code":    http.StatusUnauthorized,

@@ -6,6 +6,7 @@ import (
 
 	"github.com/HtetLinMaung/todo/internal/model"
 	"github.com/HtetLinMaung/todo/internal/service"
+	"github.com/HtetLinMaung/todo/internal/setting"
 	"github.com/HtetLinMaung/todo/internal/utils"
 	"github.com/gin-gonic/gin"
 )
@@ -117,7 +118,7 @@ func (ar *AuthRoute) Login(c *gin.Context) {
 		return
 	}
 
-	tokenString, err := utils.SignToken(fmt.Sprintf("%d,%s", user.UserID, user.Role))
+	tokenString, err := utils.SignToken(fmt.Sprintf("%d,%s", user.UserID, user.Role), setting.GetJwtSecret())
 	if err != nil {
 		fmt.Println(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{
