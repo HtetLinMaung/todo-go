@@ -17,7 +17,7 @@ func AuthMiddleware() gin.HandlerFunc {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
 				"code":    http.StatusUnauthorized,
 				"message": "Authorization header is missing!",
-			})
+		 	})
 			return
 		}
 

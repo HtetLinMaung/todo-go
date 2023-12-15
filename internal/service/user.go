@@ -66,7 +66,7 @@ func (s *UserService) GetUserByUsername(username string) (*model.User, error) {
 	err = stmt.QueryRow(username).Scan(&user.UserID, &user.Name, &user.Username, &user.Password, &user.Role, &user.Email, &user.Phone, &user.ProfileImage, &user.AccountStatus)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			// No user was found, return nil user and no error
+			// No user was found, return  nil user and no error
 			return nil, nil
 		}
 		return nil, err
